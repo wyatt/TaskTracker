@@ -1,11 +1,12 @@
+import "dotenv/config";
+
 import express from "express";
 import signale from "signale";
 import cors from "cors";
+
 import { api as routes } from "./routes";
-import dotenv from "dotenv";
 
 const app = express();
-dotenv.config();
 
 app.use(
   cors({

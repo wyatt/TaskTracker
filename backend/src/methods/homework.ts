@@ -1,6 +1,7 @@
 import { HomeworkItem } from "../types";
 import dayjs from "dayjs";
-const { v1: uuid } = require("uuid");
+import { v1 as uuid } from "uuid";
+import fetch from "node-fetch";
 
 const headers = {
   "accept": "application/json, text/plain, */*",
@@ -9,7 +10,7 @@ const headers = {
   "sec-fetch-dest": "empty",
   "sec-fetch-mode": "cors",
   "sec-fetch-site": "same-origin",
-};
+} as const;
 
 export const getHomework = async (
   username: string,
@@ -18,33 +19,26 @@ export const getHomework = async (
   establishment_id: number,
 ) => {
   const request = await fetch(`https://${server}/api/`, {
-    headers: {
-      ...headers,
-    },
+    headers,
     body: JSON.stringify({
       jsonrpc: "2.0",
       method: "EduLink.Login",
-      params: {
-        username,
-        password,
-        establishment_id,
-      },
+      params: { username, password, establishment_id },
       uuid: uuid(),
     }),
     method: "POST",
   });
+
   return fetchHomework((await request.json()).result.authtoken);
 };
 
-export const fetchHomework = async (token: string) => {
+export const fetchHomework = async (authtoken: string) => {
   const request = await fetch("https://marlingschool.edulinkone.com/api/", {
-    headers: {
-      ...headers,
-    },
+    headers,
     body: JSON.stringify({
       jsonrpc: "2.0",
       method: "EduLink.Homework",
-      params: { authtoken: token },
+      params: { authtoken },
       uuid: uuid(),
     }),
     method: "POST",
@@ -52,6 +46,7 @@ export const fetchHomework = async (token: string) => {
 
   const homework: HomeworkItem[] = (await request.json()).result.homework
     .current;
+
   return homework.map((item) => {
     return {
       id: item.id,

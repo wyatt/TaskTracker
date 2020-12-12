@@ -1,35 +1,21 @@
 import { getHomework } from "./methods/homework";
 import { getRescueTime } from "./methods/rescuetime";
 import { Router } from "express";
+import { env } from "./env";
 
 export const api = Router();
 
-api.get("/homework/", async (req, res) => {
-  if (
-    !process.env.EDULINK_USERNAME ||
-    !process.env.EDULINK_PASSWORD ||
-    !process.env.EDULINK_DOMAIN ||
-    !process.env.ESTABLISHMENT_ID
-  ) {
-    res.status(501).end();
-    return;
-  }
-  res
-    .json(
-      await getHomework(
-        process.env.EDULINK_USERNAME,
-        process.env.EDULINK_PASSWORD,
-        process.env.EDULINK_DOMAIN,
-        parseInt(process.env.ESTABLISHMENT_ID),
-      ),
-    )
-    .end();
+const homeworkOptions = [
+  env.EDULINK_USERNAME,
+  env.EDULINK_PASSWORD,
+  env.EDULINK_DOMAIN,
+  env.ESTABLISHMENT_ID,
+] as const;
+
+api.get("/homework", async (req, res) => {
+  res.json(await getHomework(...homeworkOptions));
 });
 
-api.get("/rescuetime/", async (req, res) => {
-  if (!process.env.RESCUETIME_KEY) {
-    res.status(501).end();
-    return;
-  }
-  res.json(await getRescueTime(process.env.RESCUETIME_KEY));
+api.get("/rescuetime", async (req, res) => {
+  res.json(await getRescueTime(env.RESCUETIME_KEY));
 });
