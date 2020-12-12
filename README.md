@@ -49,7 +49,7 @@ api.get("/<method>", async (req, res) => {
 ```
 Note: Add any custom types (interfaces) in `src/types.ts`
 ##### Frontend
-[TailwindCSS](https://tailwindcss.com/) is used. Simply define your styles in the `className={}` prop! If you're unsure, read the tailwind docs and look at the existing progress bars.
+[TailwindCSS](https://tailwindcss.com/) is used to style components. Simply define your styles in the `className={}` prop! If you're unsure, read the tailwind docs and look at the existing progress bars.
 1. Add a `useSWR` hook in `src/core/hooks.ts` defining the type of the response in `src/core/types.ts`
 2. Add your Bar component in `src/components/` with the naming convention `<Service>Bar.tsx`
 3. Use the container components in `containers/`. Use the existing components for implementation examples. Avoid using normal html tags, instead, defer them to a appropriately named component in `container/`
