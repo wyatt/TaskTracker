@@ -1,12 +1,12 @@
 # Task Tracker
-A flexible, simple and clean progress bar app. This app can display different types of information in an inuitive progress bar component. 
-If you have a data itegration that you think would fit this project, please open a pull request! I foster an environment of creativity, flexibility and community.
+A flexible, simple and clean progress bar app. This app can display different types of information in an intuitive progress bar component. 
+If you have a data integration that you think would fit this project, please open a pull request! I want this project to foster an environment of creativity, flexibility and community.
 
 ### What it looks like
 ![bar-screenshot](docs/screenshot.png)
 
 ### What it's made of
-- ⌨ **Typescript** - Ensures a friendly and welcoming development environment
+- ⌨ **TypeScript** - Ensures a friendly and welcoming development environment
 - ⚛ **React** - Used for a easy, reusable way to create progress bars
 - 🚅 **NodeJS** - Does the heavy lifting and fetching
 - 🤝 **SWR** - Keeps data in the frontend up-to-date
@@ -64,7 +64,7 @@ Note: Add any custom types (interfaces) in `src/types.ts`
     },
     {
       percent: 0.4,
-      color: "blue-500", // Color names tailwindcss colors. View them here: https://tailwindcss.com/docs/customizing-colors
+      color: "blue-500", // Color names are tailwindcss colors. View them here: https://tailwindcss.com/docs/customizing-colors
       name: "value2",
     }
   ]}
