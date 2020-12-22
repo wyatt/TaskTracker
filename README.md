@@ -65,7 +65,8 @@ Note: Add any custom types (interfaces) in `src/types.ts`
     {
       percent: 0.4,
       color: "blue-500", 
-      // Color names are tailwindcss colors. View them here: https://tailwindcss.com/docs/customizing-colors
+      // Color names are tailwindcss colors. 
+      // View them here: https://tailwindcss.com/docs/customizing-colors
       name: "value2",
     }
   ]}
