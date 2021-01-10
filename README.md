@@ -48,7 +48,7 @@ ESTABLISHMENT_ID="yourid"
 # Establishment ID is visible in the response from https://yourdomain.edulinkone.com/api/?method=EduLink.SchoolDetails
 # Use inspect element to find
 ```
-- 🕙 Rescuetime - Screentime Tracking
+#### 🕙 Rescuetime - Screentime Tracking
 ```env
 RESCUETIME_KEY="yourapikey" # Can be created and found at https://www.rescuetime.com/anapi/manage
 ```
