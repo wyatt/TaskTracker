@@ -57,7 +57,7 @@ RESCUETIME_KEY="yourapikey" # Can be created and found at https://www.rescuetime
 ### Add your own
 ##### Backend
 1. If your progress bar requires any API keys/secrets (highly likely), add your `.env` variable to the `env` class in `src/env.ts`
-2. Add your fetch hooks/API calls as exported functions in a seperate, clearly named file in `src/methods/`
+2. Add your fetch hooks/API calls as exported functions in a separate, clearly named file in `src/methods/`
 3. Add a method in `src/routes.ts` in this general syntax
 ```ts
 api.get("/<method>", async (req, res) => {
