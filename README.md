@@ -21,20 +21,36 @@ git clone https://github.com/wyatt/tasktracker
 cd frontend && yarn
 cd backend && yarn
 ```
-3. Run both the backend and the frontend servers.
+3. Add a .env file in backend/ 
+Populate it with env variables for the progress bars you will use, visible below. Note: If you are using a Progress Bar that you haven't entered any credentials for, the backend will error. Available base env variables include:
+```env
+PORT=8888 # If this is added/changed, it needs to be changed in the API_BASE variable in frontend/core/mutations
+```
+4. Run both the backend and the frontend servers.
 ```sh
 backend $ yarn build && yarn start
 frontend $ yarn build && yarn start
 ```
-4. That's it. You should have:
+5. That's it. You should have:
 ```
 frontend: http://localhost:3000
 backend: http://localhost:8888
 ```
 
-### Progress Bars that currently exist
-- 📚 EduLinkOne - Homework Platform
+### Existing Progress Bars (env variables)
+#### 📚 EduLinkOne - Homework Platform
+```env
+EDULINK_USERNAME="yourusername"
+EDULINK_PASSWORD="yourpassword"
+EDULINK_DOMAIN="yourdomain.edulinkone.com"
+ESTABLISHMENT_ID="yourid" 
+# Establishment ID is visible in the response from https://yourdomain.edulinkone.com/api/?method=EduLink.SchoolDetails
+# Use inspect element to find
+```
 - 🕙 Rescuetime - Screentime Tracking
+```env
+RESCUETIME_KEY="yourapikey" # Can be created and found at https://www.rescuetime.com/anapi/manage
+```
 
 
 ### Add your own
