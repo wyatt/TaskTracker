@@ -24,7 +24,8 @@ cd backend && yarn
 3. Add a .env file in backend/ 
 Populate it with env variables for the progress bars you will use, visible below. Note: If you are using a Progress Bar that you haven't entered any credentials for, the backend will error. Available base env variables include:
 ```env
-PORT=8888 # If this is added/changed, it needs to be changed in the API_BASE variable in frontend/core/mutations
+PORT=8888 
+# If this is added/changed, it needs to be changed in the API_BASE variable in frontend/core/mutations
 ```
 4. Run both the backend and the frontend servers.
 ```sh
